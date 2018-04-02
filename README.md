@@ -26,6 +26,8 @@ Requires Java 1.7 JDK or higher.
 
 ## Usage
 
+**Add Ad Data**
+
 To add ad data supply the following URL with a JSON object containing the ad data to add. 
 
 curl -H "Content-Type: application/json" -d "<JSON ad object, see below>" -X POST http://localhost:8080/adserver/services/add
@@ -42,6 +44,8 @@ curl -H "Content-Type: application/json" -d "<JSON ad object, see below>" -X POS
 }
 ```
 
+**Add Zone Data**
+
 To add zone data supply the following URL with a JSON object containing zone data to add.
 
 curl -H "Content-Type: application/json" -d "<JSON zone object, see below>" -X POST http://localhost:8080/adserver/services/add/zone
@@ -54,6 +58,8 @@ curl -H "Content-Type: application/json" -d "<JSON zone object, see below>" -X P
 }
 ```
 
+**Bulk Adding**
+
 The micro service supports adding multiple zones and ad by encapulating the JSON object in a JSON array and encapulating that array in a JSON object such as:
 
 ```
@@ -62,7 +68,7 @@ The micro service supports adding multiple zones and ad by encapulating the JSON
 }
 ```
 
-** Forecast ** 
+**Forecast** 
 
 The micro service supports calculating impression forecasts for a specific zone using the following URL.
 
@@ -81,7 +87,7 @@ Note: "toDate is optional", if omitted today's date will be used.
 }
 ```
 
-** Error JSON **
+**Error JSON**
 
 ```
 {
@@ -91,7 +97,7 @@ Note: "toDate is optional", if omitted today's date will be used.
 }
 ```
 
-** Error Codes **
+**Error Codes**
 
 | Error         | Code          | Message                                              |
 | ------------- |:-------------:| ----------------------------------------------------:|
