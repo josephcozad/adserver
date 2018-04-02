@@ -36,6 +36,7 @@ curl -H "Content-Type: application/json" -d "<JSON ad object, see below>" -X POS
 	zone: number, 
 	start: 'YYYY-MM-DD', 
 	end: 'YYYY-MM-DD', 
+	creative: string,
 	priority: number (greater than -1), 
 	goal: number (greater than 0) 
 }
@@ -63,7 +64,7 @@ The micro service supports adding multiple zones and ad by encapulating the JSON
 
 ** Forecast ** 
 
-The micro service support calculating impression forecasts for a specific zone using the following URL.
+The micro service supports calculating impression forecasts for a specific zone using the following URL.
 
 http://localhost:8080/adserver/services/forecast/<ZONE_ID>?toDate="YYYY-MM-DD"
 
