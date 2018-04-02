@@ -83,7 +83,11 @@ Note: "toDate is optional", if omitted today's date will be used.
 ** Error JSON **
 
 ```
-{"code":1002,"error":"AD_DATA_MISSING_REQUIRED","message":"creative"}
+{
+	"code":number,
+	"error":string (Error Name),
+	"message":string
+}
 ```
 
 ** Error Codes **
