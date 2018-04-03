@@ -4,7 +4,6 @@ Micro service to add ad data and zone data, and to forecast rate of impressions 
 
 The rate of impressions for each ad in a given set of ads in a zone is calculated by:
 
-
 1. by keeping track of the total daily ad impressions allowed for the given zone
 2. for each ad:
 3. calculating the number of days that the ad runs using it's start and end date.
@@ -13,18 +12,17 @@ The rate of impressions for each ad in a given set of ads in a zone is calculate
 6. if the total daily ad impressions is greater than the number of daily ad impressions for an ad, the daily ad impressions for the ad is subtracted from the total daily ad impression for a new remaining total daily ad impression for the zone and the ad impression rate is set to 100%.
 7. if the total daily ad impressions is 0 then the ad impression rate is set to 0%.
 
-
 ## Install
 
-Compile or download the adserver.jar.
-cd to the directory where the adserver.jar is.
-On the command line type: 'java -jar adserver.jar'
-
-[Requires Java 1.7 JDK](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html) or higher; may require a fee account on Oracle.
-
-To compile, be sure to have [Apache Maven](https://maven.apache.org/download.cgi) 3.5 installed.
-cd to the directory where the adserver code is.
-Run the following from the command line: 'mvn clean install'.
+Compile or download the adserver.jar.<br/>
+cd to the directory where the adserver.jar is.<br/>
+On the command line type: `java -jar adserver.jar`<br/>
+<br/>
+[Requires Java 1.7 JDK](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html) or higher; may require a fee account on Oracle.<br/>
+<br/>
+To compile, be sure to have [Apache Maven](https://maven.apache.org/download.cgi) 3.5 installed.<br/>
+cd to the directory where the adserver code is.<br/>
+Run the following from the command line: `mvn clean install`.<br/>
 
 ## Usage
 
