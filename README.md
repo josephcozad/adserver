@@ -30,7 +30,7 @@ Run the following from the command line: `mvn clean install`.<br/>
 
 To add ad data supply the following URL with a JSON object containing the ad data to add. 
 
-curl -H "Content-Type: application/json" -d "<JSON ad object, see below>" -X POST http://localhost:8080/adserver/services/add
+`curl -H "Content-Type: application/json" -d "<JSON ad object, see below>" -X POST http://localhost:8080/adserver/services/add`
 
 ```
 { 
@@ -48,7 +48,7 @@ curl -H "Content-Type: application/json" -d "<JSON ad object, see below>" -X POS
 
 To add zone data supply the following URL with a JSON object containing zone data to add.
 
-curl -H "Content-Type: application/json" -d "<JSON zone object, see below>" -X POST http://localhost:8080/adserver/services/add/zone
+`curl -H "Content-Type: application/json" -d "<JSON zone object, see below>" -X POST http://localhost:8080/adserver/services/add/zone`
 
 ```
 { 
@@ -72,7 +72,7 @@ The micro service supports adding multiple zones and ad by encapulating the JSON
 
 The micro service supports calculating impression forecasts for a specific zone using the following URL.
 
-http://localhost:8080/adserver/services/forecast/<ZONE_ID>?toDate="YYYY-MM-DD"
+`http://localhost:8080/adserver/services/forecast/<ZONE_ID>?toDate="YYYY-MM-DD"`
 
 Note: "toDate is optional", if omitted today's date will be used.
 
