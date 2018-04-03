@@ -1,13 +1,11 @@
 # Ad Server
 
-Micro service to add ad data and zone data, and to forecast rate of impressions for all adds in a given zone. 
+Microservice to add ad and zone data, and to forecast rate of impressions for all ads in a given zone. Forecasting the rate of impressions for each ad in a zone is calculated by:
 
-The rate of impressions for each ad in a given set of ads in a zone is calculated by:
-
-1. by keeping track of the total daily ad impressions allowed for the given zone
-2. for each ad:
-3. calculating the number of days that the ad runs using it's start and end date.
-4. calculating the number of impressions per day the add can run to achieve it's goal impression for the number of days the ad will run.
+1. keep track of the total daily ad impressions allowed for the zone
+2. then for each ad:
+3. calculate the number of days that the ad runs using it's start and end date.
+4. calculate the number of impressions per day the ad can run to achieve it's goal impression.
 5. if the total daily ad impressions is greater than zero, and less than the number of daily ad impressions for an ad, the total daily ad impression are divided by the number of daily ad impressions for an ad to get the impression rate for that ad.
 6. if the total daily ad impressions is greater than the number of daily ad impressions for an ad, the daily ad impressions for the ad is subtracted from the total daily ad impression for a new remaining total daily ad impression for the zone and the ad impression rate is set to 100%.
 7. if the total daily ad impressions is 0 then the ad impression rate is set to 0%.
@@ -76,18 +74,24 @@ The micro service supports calculating impression forecasts for a specific zone 
 
 Note: "toDate is optional", if omitted today's date will be used.
 
+Result will be a JSON array of JSON objects, each object reflects the data for a specific ad for a given zone id.
+
 ```
 {
 	"items":[
-		{"adId":111,"impressionRate":1,"adZoneId":123},
-		{"adId":333,"impressionRate":1,"adZoneId":123},
-		{"adId":222,"impressionRate":0.375,"adZoneId":123},
-		{"adId":444,"impressionRate":0,"adZoneId":123}
+		{
+			"adId":number,
+			"impressionRate":number (between 0 and 1 inclusive),
+			"adZoneId":number
+		},
+		...
 	]
 }
 ```
 
-**Error JSON**
+**Error**
+
+Errors generate a JSON object in the form of:
 
 ```
 {
@@ -99,8 +103,8 @@ Note: "toDate is optional", if omitted today's date will be used.
 
 **Error Codes**
 
-| Error         | Code          | Message                                              |
-| ------------- |:-------------:| ----------------------------------------------------:|
+| Error                         | Code   | Message                                     |
+| ------------------------------|:------:| -------------------------------------------:|
 | SYSTEM_ERROR                  | 9999   | Plain text message.                         |
 | ADDATA_NOT_FOUND_FOR_ZONE     | 1000   | Ad zone id for which ad data not found.     |
 | ADZONE_DATA_NOT_FOUND         | 1001   | Ad zone id for which zone data not found.   |
