@@ -16,7 +16,6 @@ The rate of impressions for each ad in a given set of ads in a zone is calculate
 
 ## Install
 
-```
 Compile or download the adserver.jar.
 cd to the directory where the adserver.jar is.
 On the command line type: 'java -jar adserver.jar'
@@ -26,7 +25,6 @@ On the command line type: 'java -jar adserver.jar'
 To compile, be sure to have [Apache Maven](https://maven.apache.org/download.cgi) 3.5 installed.
 cd to the directory where the adserver code is.
 Run the following from the command line: 'mvn clean install'.
-```
 
 ## Usage
 
