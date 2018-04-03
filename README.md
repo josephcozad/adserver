@@ -7,11 +7,11 @@ The rate of impressions for each ad in a given set of ads in a zone is calculate
 
 1. by keeping track of the total daily ad impressions allowed for the given zone
 2. for each ad:
-  1. calculating the number of days that the ad runs using it's start and end date.
-  2. calculating the number of impressions per day the add can run to achieve it's goal impression for the number of days the ad will run.
-  3. if the total daily ad impressions is greater than zero, and less than the number of daily ad impressions for an ad, the total daily ad impression are divided by the number of daily ad impressions for an ad to get the impression rate for that ad.
-  4. if the total daily ad impressions is greater than the number of daily ad impressions for an ad, the daily ad impressions for the ad is subtracted from the total daily ad impression for a new remaining total daily ad impression for the zone and the ad impression rate is set to 100%.
-  5. if the total daily ad impressions is 0 then the ad impression rate is set to 0%.
+3. calculating the number of days that the ad runs using it's start and end date.
+4. calculating the number of impressions per day the add can run to achieve it's goal impression for the number of days the ad will run.
+5. if the total daily ad impressions is greater than zero, and less than the number of daily ad impressions for an ad, the total daily ad impression are divided by the number of daily ad impressions for an ad to get the impression rate for that ad.
+6. if the total daily ad impressions is greater than the number of daily ad impressions for an ad, the daily ad impressions for the ad is subtracted from the total daily ad impression for a new remaining total daily ad impression for the zone and the ad impression rate is set to 100%.
+7. if the total daily ad impressions is 0 then the ad impression rate is set to 0%.
 
 
 ## Install
@@ -21,7 +21,11 @@ Compile or download the adserver.jar.
 cd to the directory where the adserver.jar is.
 On the command line type: 'java -jar adserver.jar'
 
-Requires Java 1.7 JDK or higher.
+[Requires Java 1.7 JDK](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html) or higher; may require a fee account on Oracle.
+
+To compile, be sure to have [Apache Maven](https://maven.apache.org/download.cgi) 3.5 installed.
+cd to the directory where the adserver code is.
+Run the following from the command line: 'mvn clean install'.
 ```
 
 ## Usage
