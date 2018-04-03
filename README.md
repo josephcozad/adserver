@@ -21,6 +21,7 @@ On the command line type: `java -jar adserver.jar`<br/>
 To compile, be sure to have [Apache Maven](https://maven.apache.org/download.cgi) 3.5 installed.<br/>
 cd to the directory where the adserver pom.xml is.<br/>
 Run the following from the command line: `mvn clean install`.<br/>
+The jar file will be located in a directory called 'target'.<br/>
 
 ## Usage
 
