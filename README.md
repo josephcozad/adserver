@@ -19,7 +19,7 @@ On the command line type: `java -jar adserver.jar`<br/>
 [Requires Java 1.7 JDK](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html) or higher; may require a fee account on Oracle.<br/>
 <br/>
 To compile, be sure to have [Apache Maven](https://maven.apache.org/download.cgi) 3.5 installed.<br/>
-cd to the directory where the adserver code is.<br/>
+cd to the directory where the adserver pom.xml is.<br/>
 Run the following from the command line: `mvn clean install`.<br/>
 
 ## Usage
