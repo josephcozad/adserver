@@ -3,12 +3,13 @@
 Microservice to add ad and zone data, and to forecast rate of impressions for all ads in a given zone. Forecasting the rate of impressions for each ad in a zone is calculated by:
 
 1. keep track of the total daily ad impressions allowed for the zone
-2. then for each ad:
-3. calculate the number of days that the ad runs using it's start and end date.
-4. calculate the number of impressions per day the ad can run to achieve it's goal impression.
-5. if the total daily ad impressions is greater than zero, and less than the number of daily ad impressions for an ad, the total daily ad impression are divided by the number of daily ad impressions for an ad to get the impression rate for that ad.
-6. if the total daily ad impressions is greater than the number of daily ad impressions for an ad, the daily ad impressions for the ad is subtracted from the total daily ad impression for a new remaining total daily ad impression for the zone and the ad impression rate is set to 100%.
-7. if the total daily ad impressions is 0 then the ad impression rate is set to 0%.
+2. ads for the zone are sorted by priority
+3. then for each ad:
+4. calculate the number of days that the ad runs using it's start and end date.
+5. calculate the number of impressions per day the ad can run to achieve it's goal impression.
+6. if the total daily ad impressions is greater than zero, and less than the number of daily ad impressions for an ad, the total daily ad impression are divided by the number of daily ad impressions for an ad to get the impression rate for that ad.
+7. if the total daily ad impressions is greater than the number of daily ad impressions for an ad, the daily ad impressions for the ad is subtracted from the total daily ad impression for a new remaining total daily ad impression for the zone and the ad impression rate is set to 100%.
+8. if the total daily ad impressions is 0 then the ad impression rate is set to 0%.
 
 ## Install
 
